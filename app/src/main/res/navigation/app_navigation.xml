@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/bookScreen">
+
+    <fragment
+        android:id="@+id/bookScreen"
+        android:name="com.example.bookapp.presentation.screens.BookScreen"
+        android:label="BookScreen"
+        tools:layout="@layout/screen_books" >
+        <action
+            android:id="@+id/action_bookScreen_to_readScreen"
+            app:destination="@id/readScreen" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/readScreen"
+        android:name="com.example.bookapp.presentation.screens.ReadScreen"
+        android:label="ReadScreen"
+        tools:layout="@layout/screen_read" >
+        <argument
+            android:name="data"
+            app:argType="com.example.bookapp.data.BookData" />
+    </fragment>
+
+</navigation>
